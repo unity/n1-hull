@@ -9,6 +9,7 @@
   "engines": {
     "nylas": "*"
   },
+  "styleSheets": ["controls", "email-frame", "sidebar", "threads", "notifications"],
   "private": true
 }
 

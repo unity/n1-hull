@@ -1,0 +1,82 @@
+@import "variables";
+
+
+.list-tabular .list-column.list-column-Item {
+  margin-left: -20px;
+  padding-left: 30px;
+}
+
+.thread-list {
+  .thread-info-column, .list-column-item{
+    transition: all .2s ease-out;
+  }
+  &.handler-split .list-item.selected, .focused {
+    .thread-info-column{
+      transform: translateX(10px);
+    }
+    .mail-label{
+      background: rgba(1,1,1,0.2) !important;
+    }
+  }
+  .list-container {
+    .list-item {
+      &.focused:hover .list-column-HoverActions .inner {
+        color: @taiga-dark !important;
+        background-image: linear-gradient(90deg, fadeout(@taiga-lighter, 100%) 0%, darken(@taiga-lighter, 10%) 100%);
+
+        .action {
+          -webkit-filter: none;
+        }
+        .thread-icon {
+          &:not(.thread-icon-star) {
+            opacity: 0.7;
+          }
+        }
+      }
+      &.focused {
+        .thread-icon, .mail-important-icon, .draft-icon {
+          -webkit-filter: none;
+        }
+      }
+      &:hover {
+        .thread-icon {
+          visibility: inherit;
+        }
+      }
+      .list-column {
+        border-bottom: 0 !important;
+      }
+    }
+    .scroll-region-content {
+      .scroll-region-content-inner {
+        .list-rows {
+          .list-item {
+            cursor: pointer !important;
+            box-sizing: border-box;
+            border: 0 !important;
+            background-color: @white !important;
+            color: @taiga-dark !important;
+            &.focused {
+              color: @taiga-dark !important;
+              background-color: darken(@taiga-lighter, 5%) !important;
+            }
+            &.selected {
+              color: @taiga-dark !important;
+              background-color: darken(@taiga-lighter, 5%) !important;
+            }
+            &.keyboard-cursor {
+              background-color: #CCDDE4 !important;    
+            }
+          }
+        }
+      }
+    }
+  }
+  .thread-icon {
+    background-image: url(../static/images/thread-list/icon-star-hover-@2x.png);
+
+    &:not(.thread-icon-star) {
+      visibility: hidden;
+    }
+  }
+}
