@@ -1,6 +1,7 @@
 @import "variables";
 
 .header-container {
+  margin-right: 10px;
   margin-right: 0;
   input {
     height: 24px;
@@ -16,7 +17,11 @@
  */
 .btn-toolbar, .token, .actions>.btn, .new-package>.btn, .appearance-mode-switch>.btn {
   box-shadow: none !important;
-  border-radius: 100px;
+  // background: @white !important;
+  border-radius: @base-border-radius !important;
+  &.item-compose {
+    border: 1px solid @taiga-light;
+  }
   border: 0 solid @taiga-light !important;
   cursor: pointer !important;
   background: rgba(0,0,0,0);
@@ -41,6 +46,20 @@ body.platform-win32 {
       border: 0 !important;
     }
   }
+}
+
+.btn.btn-emphasis {
+  background-color: @taiga-accent !important;
+  border-color: @taiga-accent !important;
+  color: @white !important;
+
+  img.content-mask {
+    background-color: @white !important;
+  }
+}
+
+.composer-inner-wrap .composer-action-bar-wrap .btn.btn-toolbar:not(.btn-emphasis).btn-enabled img.content-mask {
+  background-color: @taiga-accent !important;
 }
 
 
@@ -82,22 +101,13 @@ body.platform-win32 {
     }
   }
 }
+
 .button-dropdown.btn-emphasis .primary-item,
 .button-dropdown.btn-emphasis .secondary-picker,
 .button-dropdown.btn-emphasis .only-item{
   background-color: @taiga-accent !important;
   border-color: @taiga-accent !important;
   color: @white !important;
-}
-
-.btn.btn-emphasis {
-  background-color: @taiga-accent !important;
-  border-color: @taiga-accent !important;
-  color: @white !important;
-
-  img.content-mask {
-    background-color: @white !important;
-  }
 }
 
 .sheet-toolbar .btn-toolbar {

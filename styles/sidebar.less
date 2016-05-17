@@ -1,3 +1,4 @@
+@import "../../../static/variables/ui-variables";
 @import "variables";
 
 #account-switcher .primary-item .name {
@@ -10,15 +11,35 @@
     padding-bottom: 3px;
   }
   section {
+    &:first-child .heading {
+      padding-right: 40px;
+    }
+
+    .heading {
+      padding-bottom: 5px;
+      .text {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
     .item-container {
-      margin: 0 3px !important;
+      margin: 0 10px 0 0 !important;
+
       .item-children{
         padding-left: 8px;
       }
       .disclosure-triangle {
-        opacity: .4;
-        width: 17px;
-        padding: 9px 0 7px 7px;
+        display: flex;
+        align-items: center;
+        width: 15px;
+        div {
+          border-left-color: @border-color-primary;
+          border-top-width: 3px;
+          border-bottom-width: 3px;
+          border-left-width: 5px;
+          transform-origin: 2px;
+        }
       }
 
       .item {
@@ -37,9 +58,9 @@
 
         &.selected {
           background: @taiga-accent !important;
-          opacity: .6;
-          border-radius: 100px;
+          border-radius: @base-border-radius;
           color: @white !important;
+          opacity: .6;
           padding-left: 10px !important;
 
           .item-count-box {
