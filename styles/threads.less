@@ -42,15 +42,18 @@
 .thread-list {
   .thread-info-column, .list-column-item{
     transition: all .2s ease-out;
+    will-change: transform;
+    transform: translateX(0);
   }
   &.handler-split .list-item.selected, .focused {
-    .thread-info-column{
-      transform: translateX(10px);
-    }
+    // .thread-info-column{
+    //   transform: translateX(10px);
+    // }
     .mail-label{
       background: rgba(1,1,1,0.2) !important;
     }
   }
+
   .list-container {
     .list-item {
       &.focused:hover .list-column-HoverActions .inner {
@@ -69,6 +72,9 @@
       &.focused {
         .thread-icon, .mail-important-icon, .draft-icon {
           -webkit-filter: none;
+        }
+        .open-tracking-icon img.content-mask.opened {
+          background-color: #419bf9;
         }
       }
       &:hover {
@@ -112,4 +118,9 @@
       visibility: hidden;
     }
   }
+}
+
+.column-ThreadList,
+.column-RootSidebar {
+  border-right: 1px solid #E6E6E6;
 }
