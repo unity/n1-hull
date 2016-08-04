@@ -5,7 +5,7 @@
   margin-right: 0;
   input {
     height: 24px;
-    font-size: 13px;
+    font-size: @input-font-size;
     line-height: 17px;
     margin-top: -2px;
     border-radius: 100px;
@@ -165,4 +165,9 @@ body.platform-win32 {
   &.active {
     background-color: lighten(@taiga-light, 30%) !important;
   }
+}
+
+body, nylas-workspace {
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.02em;
 }
