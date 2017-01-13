@@ -93,6 +93,7 @@
         border: 0 !important;
         background-color: @white !important;
         color: @taiga-dark !important;
+        box-shadow: inset 0 -1px 0px 0px rgb(238, 238, 238);
         &.focused {
           color: @taiga-dark !important;
           background-color: #dde5e8 !important;
@@ -142,5 +143,12 @@
   }
   .thread-injected-mail-labels .thread-avatar{
     top: 14px;
+  }
+}
+
+
+.thread-list, .draft-list  {
+  .unread:not(.focused) .subject {
+    font-weight: 500;
   }
 }
