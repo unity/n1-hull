@@ -43,11 +43,11 @@
   .thread-info-column, .list-column-item{
     transition: all .2s ease-out;
     position: relative;
-    left: 0;
+    left: 5px;
   }
   &.handler-split .list-item.selected, .focused {
     .thread-info-column{
-      left: 5px;
+      left: 10px;
     }
     .mail-label{
       background: rgba(1,1,1,0.2) !important;
@@ -58,7 +58,7 @@
     .list-item {
       &.focused:hover .list-column-HoverActions .inner {
         color: @taiga-dark !important;
-        background-image: linear-gradient(90deg, fadeout(@taiga-lighter, 100%) 0%, darken(@taiga-lighter, 10%) 100%);
+        background-image: linear-gradient(90deg, @taiga-focused 0%, darken(@taiga-lighter, 10%) 100%);
         .action {
           -webkit-filter: none;
         }
@@ -84,6 +84,9 @@
       }
       .list-column {
         border-bottom: 0 !important;
+        .thread-injected-icons .thread-avatar > * {
+          top: 0 !important;
+        }
       }
     }
     .scroll-region-content .scroll-region-content-inner .list-rows {
@@ -103,7 +106,7 @@
           background-color: darken(@taiga-lighter, 5%) !important;
         }
         &.keyboard-cursor {
-          background-color: #CCDDE4 !important;    
+          background-color: #CCDDE4 !important;
         }
       }
     }
@@ -131,6 +134,12 @@
 }
 
 .thread-list-narrow {
+  .icons-column {
+    top: 51px;
+  }
+  .thread-info-column > * {
+      margin-left: 70px;
+  }
   .thread-info-column .participants-wrapper {
     line-height: 1;
     min-height: 0;
@@ -142,10 +151,9 @@
     }
   }
   .thread-injected-mail-labels .thread-avatar{
-    top: 14px;
+    top: 4px;
   }
 }
-
 
 .thread-list, .draft-list  {
   .unread:not(.focused) .subject {
